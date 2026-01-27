@@ -3,19 +3,20 @@
 // With Routing, URLs behave like real website pages.
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Login from "./pages/Login";
 
 function App() {
   return (
     <Router>  
       <Routes>
         {/* Routes is like a container, which holds all route definitions. */}
-        <Route path="/login" element={<h1>Login</h1>} />
+        <Route path="/login" element={<Login />} />
             {/* Here element is a prop for Route component. later <Login /> */}
         <Route path="/register" element={<h1>Register</h1>} />
         {/* Route is like a single rule, which says if url matches this path - show this component. */}
       </Routes>
     </Router>
-  );
+  );  
 }
 
 
