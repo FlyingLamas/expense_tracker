@@ -5,6 +5,8 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import Dashboard from "./pages/Dashboard";
+import ProtectedRoute from "./routes/ProtectedRoute";
 
 function App() {
   return (
@@ -13,8 +15,19 @@ function App() {
         {/* Routes is like a container, which holds all route definitions. */}
         <Route path="/login" element={<Login />} />
             {/* Here element is a prop for Route component. later <Login /> */}
+        
         <Route path="/register" element={<Register />} />
         {/* Route is like a single rule, which says if url matches this path - show this component. */}
+        
+        <Route 
+          path="/dashboard"
+          element={
+            <ProtectedRoute>
+              <Dashboard />
+            </ProtectedRoute>
+          }
+        />
+
       </Routes>
     </Router>
   );  
