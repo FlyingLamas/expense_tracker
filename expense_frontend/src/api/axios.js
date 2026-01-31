@@ -14,6 +14,8 @@ api.interceptors.request.use((config) => {
   if (tokens) {
     const parsedTokens = JSON.parse(tokens);
     config.headers.Authorization = `Bearer ${parsedTokens.access}`;
+    // This is called centralized authentication handling 
+    // Initially we were adding headers = Authorization for every get, post, etc request
   }
 
   return config;

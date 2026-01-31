@@ -2,7 +2,7 @@
 // Without Routing, React can show only one component and changing pages requires page reloads
 // With Routing, URLs behave like real website pages.
 
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Dashboard from "./pages/Dashboard";
@@ -11,7 +11,6 @@ import ProtectedRoute from "./routes/ProtectedRoute";
 
 function App() {
   return (
-    <Router>  
       <Routes>
         {/* Routes is like a container, which holds all route definitions. */}
         <Route path="/login" element={<Login />} />
@@ -39,13 +38,10 @@ function App() {
         />
 
       </Routes>
-    </Router>
   );  
 }
 
-
 export default App;
-
 
 // Without Routing, for example in Django templates.
 // Every time you click a link, Browser sens request to server, server sends a full HTML page, Browser reloads completely.
